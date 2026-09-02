@@ -41,3 +41,7 @@ El tratamiento de mayusculas y espacios no es un problema crítico, pero represe
 
 
 ## Qué NO tocaría, y por qué
+
+
+# Uso de la IA
+Se hizo uso de la IA para buscar errores que a simple vista me costo visualizar y para comprender diversas partes del codigo. 

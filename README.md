@@ -34,3 +34,8 @@ Ajustar el mapeo de datos para que la Policia lo validase y entender en parte al
 
 ## Cuánto tiempo me llevó
 2 horas y 30 minutos aproximadamente.
+
+##Uso de la IA 
+
+Se hizo uso de la IA para la creacion del frontend por falta de tiempo. Ademas de usarla para comprender algunas partes tanto del codigo como de la API.
+Su uso ayudo a comprender y tomar algunas decisiones.
