@@ -1,0 +1,9 @@
+{
+  "name": "parte-viajeros",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "node --experimental-strip-types src/server.ts",
+    "test": "node --experimental-strip-types --test"
+  }
+}

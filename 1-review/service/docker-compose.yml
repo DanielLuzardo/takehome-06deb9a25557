@@ -1,0 +1,7 @@
+services:
+  parte:
+    build: .
+    ports:
+      - "8080:${PARTE_PORT}"
+    environment:
+      PARTE_PORT: ${PARTE_PORT}

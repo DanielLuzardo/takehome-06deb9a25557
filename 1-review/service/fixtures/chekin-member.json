@@ -1,0 +1,24 @@
+[
+  {
+    "id": "9d1f0c7a",
+    "name": "Ainhoa",
+    "surname": "Mendive",
+    "birth_date": "1989-03-11",
+    "nationality": "ESP",
+    "gender": "F",
+    "kinship_relationship": "TITULAR",
+    "document_number": "51204877R",
+    "document_type": "NIF"
+  },
+  {
+    "id": "3b7ec204",
+    "name": "Gorka",
+    "surname": "Mendive",
+    "birth_date": "2013-07-29",
+    "nationality": "ESP",
+    "gender": "M",
+    "kinship_relationship": "HIJO",
+    "document_number": null,
+    "document_type": null
+  }
+]

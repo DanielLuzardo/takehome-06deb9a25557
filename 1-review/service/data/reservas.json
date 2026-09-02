@@ -1,0 +1,23 @@
+{
+  "1041": {
+    "id": "1041",
+    "propiedad": "Villa Tamadaba",
+    "fechaEntrada": "2026-08-14",
+    "proveedor": "chekin",
+    "huespedes": [
+      { "name": "Ainhoa", "surname": "Mendive", "birth_date": "1989-03-11", "nationality": "ESP", "gender": "F", "kinship_relationship": "TITULAR", "document_number": "51204877R" },
+      { "name": "Gorka", "surname": "Mendive", "birth_date": "2013-07-29", "nationality": "ESP", "gender": "M", "kinship_relationship": "HIJO", "document_number": null },
+      { "name": "Uxue", "surname": "Mendive", "birth_date": "2025-01-22", "nationality": "ESP", "gender": "F", "kinship_relationship": "HIJA", "document_number": null }
+    ]
+  },
+  "1042": {
+    "id": "1042",
+    "propiedad": "Villa Guayadeque",
+    "fechaEntrada": "2026-08-20",
+    "proveedor": "bookipro",
+    "huespedes": [
+      { "nombreCompleto": "Sofia Alcaraz Ferrer", "nacimiento": "1994-11-02", "pais": "ES", "sexo": "MUJER", "rol": "titular", "documento": { "tipo": "NIF", "numero": "44980213K" } },
+      { "nombreCompleto": "Marc Bonet Sala", "nacimiento": "1992-06-17", "pais": "ES", "sexo": "HOMBRE", "rol": "acompanante", "documento": { "tipo": "NIF", "numero": "39220154T" } }
+    ]
+  }
+}

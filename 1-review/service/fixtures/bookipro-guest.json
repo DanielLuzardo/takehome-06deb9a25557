@@ -1,0 +1,18 @@
+[
+  {
+    "nombreCompleto": "Sofia Alcaraz Ferrer",
+    "nacimiento": "1994-11-02",
+    "pais": "ES",
+    "sexo": "MUJER",
+    "rol": "titular",
+    "documento": { "tipo": "NIF", "numero": "44980213K" }
+  },
+  {
+    "nombreCompleto": "Marc Bonet Sala",
+    "nacimiento": "1992-06-17",
+    "pais": "ES",
+    "sexo": "HOMBRE",
+    "rol": "acompanante",
+    "documento": { "tipo": "NIF", "numero": "39220154T" }
+  }
+]
