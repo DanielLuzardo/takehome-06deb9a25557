@@ -36,12 +36,22 @@ Ajustar el mapeo de datos para que la policia lo validase, así como entender al
 ## Cuánto tiempo me llevó
 2 horas y 30 minutos aproximadamente.
 
-## Uso de la IA 
 
-Se hizo uso de la IA como apoyo para montar el frontend rápidamente por optimización de tiempo. Así como para entender con mayor agilidad ciertos puntos del código base y de la API a la hora de tomar decisiones.
-## Comentarios extra 
+## Comentarios extra fuera del tiempo
 
 Para el bloque 1 no conseguí realizar un analísis tan preciso como me hubiera gustado, me tomo su tiempo comprender el codigo y encontrar algunos fallos. Pero considero que 
 con algo mas de tiempo podria haber encontrado más.
 
 Dedicar más minutos de los previstos a asentar la base del primer bloque hizo que fuera más justo de tiempo en esta parte. Por esa razón prioricé tener el programa completo y funcional , dejando conscientemente fuerael manejo de los errores 504 de la API.
+
+La IA fue principalmente una herramienta de apoyo: más allá de generar código, me sirvió para contrastar ideas y validar decisiones técnicas.
+
+En tareas como el mapeo de datos al formato del SES fue fundamental para resolver casos especiales que daban error, sobre todo la gestión de documentos y la detección según la nacionalidad.
+
+Gran parte de la interfaz visual también la saqué con IA, ya que con el tiempo justo preferí resolver una pantalla simple pero visualmente presentable.
+
+Por último, me apoyé en ella para escribir los tests  base y comprobar que todo funcionaba bien, aunque por tiempo no pude añadir tantos como me hubiese gustado. 
+
+En todo momento mantuve el control descartando soluciones que complicaban el código sin necesidad, como propuestas de meter librerías y dependencias de más para la web cuando con el http nativo y Handlebars bastaba.
+
+En el bloque 1 me sirvió para repasar el código más rápido, entender qué hacía cada parte y confirmar los fallos y puntos débiles que iba viendo antes de ponerme a redactar el análisis.También me señaló algunos fallos extra que, al no considerarlos prioritarios o no entenderlos del todo en ese momento, preferí no añadir para centrarme solo en lo que tenía claro.
