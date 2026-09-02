@@ -72,10 +72,14 @@ function inferDocumentType(documentNumber: string | null, nationality: string): 
     if (!documentNumber) return null;
     const doc = documentNumber.trim().toUpperCase();
 
-    if (/^[0-9]{8}[A-Z]$/.test(doc)) return "NIF";
-    if (/^[XYZ][0-9]{7}[A-Z]$/.test(doc)) return "NIE";
-    if (nationality !== "ESP") return "PAS";
-    return "OTRO";
+    if (nationality === "ESP") {
+        if (/^[0-9]{8}[A-Z]$/.test(doc)) return "NIF";
+        if (/^[XYZ][0-9]{7}[A-Z]$/.test(doc)) return "NIE";
+        return "OTRO";
+    }
+
+    // Extranjeros
+    return "PAS";
 }
 
 /**
