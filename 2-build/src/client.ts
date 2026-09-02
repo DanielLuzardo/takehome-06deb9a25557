@@ -34,11 +34,23 @@ export async function getBooking(id: string): Promise<Booking> {
 }
 
 /** Returns one page of guests. */
-export async function guestsOf(bookingId: string, page = 1): Promise<Guest[]> {
-    const body = await request<{ items: Guest[]; _links: Record<string, { href: string }> }>(
-        "/bookings/" + bookingId + "/guests?page=" + page,
-    );
-    return body.items;
+/** The API shows that it can return more than 1 page , so we change the code to manage more than 1  */
+export async function guestsOf(bookingId: string): Promise<Guest[]> {
+    const allGuests: Guest[] = [];
+    let page = 1;
+    while (true) {
+        const body = await request<{ items: Guest[]; _links: Record<string, { href: string }> }>(
+            "/bookings/" + bookingId + "/guests?page=" + page,
+        );
+
+
+    allGuests.push(...body.items);
+    if (!body.items || body.items.length === 0) {
+        break;
+    }
+    page++;
+}
+    return allGuests;
 }
 
 export async function declare(bookingId: string, lines: PoliceReportLine[]): Promise<{ batchId: string }> {
