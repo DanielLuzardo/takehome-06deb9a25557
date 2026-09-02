@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Reserva {{booking.id}}</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<div class="tarjeta">
+    <h1 class="titulo-reserva">Reserva #{{booking.id}} — {{booking.property}}</h1>
+    <p><strong>Capacidad del alojamiento:</strong> {{booking.capacity}} plazas</p>
+</div>
+
+<div class="tarjeta">
+    <h2 class="titulo-seccion">Cálculos</h2>
+    <p><strong>Aforo ocupado:</strong> {{plazas}} plazas <em>(sin menores de 2 años)</em></p>
+    <p><strong>Parte policial:</strong> {{totalViajeros}} personas <em>(total viajeros)</em></p>
+</div>
+
+<div class="tarjeta">
+    <h2 class="titulo-seccion">Declaración SES</h2>
+    <p><strong>Lote:</strong> <code>{{batch.batchId}}</code></p>
+    <p><strong>Estado:</strong> {{batch.status}}</p>
+    <p><strong>Aceptadas:</strong> {{batch.accepted}} | <strong>Rechazadas:</strong> {{batch.rejected}}</p>
+</div>
+
+<div class="tarjeta">
+    <h2 class="titulo-seccion">Huéspedes declarados</h2>
+    {{#each reportLines}}
+        <p class="ficha-huesped">
+            <strong>{{firstName}} {{lastName}}</strong><br>
+            Nacimiento: {{birthDate}} | Sexo: {{sex}} | Parentesco: {{kinship}}<br>
+            Documento: {{#if documentType}}{{documentType}} {{documentNumber}}{{else}}Sin documento (menor){{/if}}
+        </p>
+    {{/each}}
+</div>
+
+</body>
+</html>
