@@ -2,9 +2,9 @@
 
 
 ## Cómo ejecutarlo
-Para ejecutarlo abriremos CMD en la ca
+Abrir la terminal (CMD) en la carpeta del proyecto y seguir estos pasos:
 1. Instalar dependencias:
-```bash
+```bash```
 npm install
 2. Configurar las variables en la terminal:
    set API_BASE=<URL_DE_LA_API>
@@ -16,26 +16,32 @@ npm install
 5. Abrir el navegador en http://localhost:3000
 
 ## Por qué elegí este lenguaje
-Apesar de no ser un lenguaje que haya estudiado/ conozco mucho era el mas optimo en mi opinión para trabajar 
-este ejercicio.
+A pesar de no ser un lenguaje en el que tenga tanta experiencia previa,consideré que era el mas optimo para trabajar este tipo de "ejercicio".Además aunque mi experiencia principal es en JavaScript, su similitud con TypeScript hizo que fuera la opción más cómoda y lógica para resolver.
 
 ## Qué decidí y por qué
-Primeramente me fijé que el formato que usaba la policia no era el mismo que el que brindaba la plataforma, por lo tanto primeramente traduje
-al formato de la policia los datos que nos daban.
-Seguidamente me di cuenta que el codigo ya creado en client.ts devolvia solo una pagina de "guest" pero observando la API me di cuenta que puede devolver mas de una pagina , por
-lo tanto añadimos un bucle para devolver todas.
-Otro de los problemas percatados es que al hacer npm start siempre devolvia el status en "pending" no permitiendo así que el usuario sepa si la policia acepto o no su informe, por lo que añadí un intervalo de espera que se repite hasta que la policia devuelva su veredicto.
+
+Primeramente me fijé en que el formato que exige la policía es distinto al que entrega la API interna del alojamiento. Por ello, creé una capa de mapeo para traducir los datos de los huéspedes a lo que el validador policial espera recibir.
+
+Seguidamente me di cuenta que el codigo ya creado en client.ts solo recuperaba la primera página de huéspedes. Al analizar la API vi que los resultados pueden venir paginados, así que implementé un bucle para recorrer todas las páginas y no dejar a ningún viajero fuera.
+
+Al arrancar la aplicación, la API devolvía inicialmente el lote en estado pending, impidiendo ver el veredicto final. Añadí un bucle de espera activa hasta que el SES liquida el lote y devuelve el estado definitivo.
 
 ## Qué dejé fuera a propósito
-Por falta de tiempo me fije que de vez en cuando la API devolvia un error 504 , me gustaría haber podido manejarlo para solucionarlo.
+
+Por falta de tiempo no llegué a implementar algo para absorber los errores 504  que la API  devolvía de vez en cuando.
 
 ## Qué me costó más
-Ajustar el mapeo de datos para que la Policia lo validase y entender en parte algunas partes de la API.
+Ajustar el mapeo de datos para que la policia lo validase, así como entender algunos comportamientos concretos de la API.
 
 ## Cuánto tiempo me llevó
 2 horas y 30 minutos aproximadamente.
 
-##Uso de la IA 
+## Uso de la IA 
 
-Se hizo uso de la IA para la creacion del frontend por falta de tiempo. Ademas de usarla para comprender algunas partes tanto del codigo como de la API.
-Su uso ayudo a comprender y tomar algunas decisiones.
+Se hizo uso de la IA como apoyo para montar el frontend rápidamente por optimización de tiempo. Así como para entender con mayor agilidad ciertos puntos del código base y de la API a la hora de tomar decisiones.
+## Comentarios extra 
+
+Para el bloque 1 no conseguí realizar un analísis tan preciso como me hubiera gustado, me tomo su tiempo comprender el codigo y encontrar algunos fallos. Pero considero que 
+con algo mas de tiempo podria haber encontrado más.
+
+Dedicar más minutos de los previstos a asentar la base del primer bloque hizo que fuera más justo de tiempo en esta parte. Por esa razón prioricé tener el programa completo y funcional , dejando conscientemente fuerael manejo de los errores 504 de la API.
