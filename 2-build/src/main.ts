@@ -26,6 +26,14 @@ console.log("  occupancy: " + occupancy(booking, guests, today));
 const lines = policeReportLines(guests, today);
 console.log("  report:    " + lines.length + " lines");
 
+//We add this part of the code for waiting for the police decision before print the text
 const { batchId } = await declare(booking.id, lines);
 console.log("Declared as " + batchId);
-console.log(JSON.stringify(await getBatch(batchId), null, 2));
+
+let batch = await getBatch(batchId);
+while (batch.status === "pending") {
+    await new Promise((resolve) => setTimeout(resolve, 500));
+    batch = await getBatch(batchId);
+}
+
+console.log(JSON.stringify(batch, null, 2));
