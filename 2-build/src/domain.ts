@@ -52,14 +52,40 @@ export function ageOn(birthDate: string, reference: string): number {
     return year - birthYear - (hasHadBirthday ? 0 : 1);
 }
 
+//We are going to create auxiliar functions to translate the format that actually we have to the format that the police wants
+
+function mapSex(gender: Sex): string{
+    switch (gender) {
+        case "F": return "M";
+        case "M": return "H";
+        case "X": return "O";
+    }
+}
+function mapKinship(kinship: Kinship): string {
+    switch (kinship) {
+        case "HOLDER":  return "TI";
+        case "PARTNER": return "CY";
+        case "CHILD":   return "HJ";
+    }
+}
+function inferDocumentType(documentNumber: string | null, nationality: string): string | null {
+    if (!documentNumber) return null;
+    const doc = documentNumber.trim().toUpperCase();
+
+    if (/^[0-9]{8}[A-Z]$/.test(doc)) return "NIF";
+    if (/^[XYZ][0-9]{7}[A-Z]$/.test(doc)) return "NIE";
+    if (nationality !== "ESP") return "PAS";
+    return "OTRO";
+}
+
 /**
  * YOUR JOB (1 of 2): how many slots the booking takes up.
  *
  * It is compared against `booking.capacity`. Differing from the number of declared
  * people is not an error: they are two counts and both are correct.
  */
-export function occupancy(_booking: Booking, _guests: readonly Guest[], _today: string): number {
-    throw new Error("Not implemented");
+export function occupancy(_booking: Booking, guests: readonly Guest[], today: string): number {
+    return guests.filter(guest => ageOn(guest.birthDate, today) >= 2).length;
 }
 
 /**
@@ -68,6 +94,15 @@ export function occupancy(_booking: Booking, _guests: readonly Guest[], _today: 
  * Mind the values: what the provider returns and what the authority accepts are not
  * the same catalogue, even when the letters sometimes match.
  */
-export function policeReportLines(_guests: readonly Guest[], _today: string): PoliceReportLine[] {
-    throw new Error("Not implemented");
+export function policeReportLines(guests: readonly Guest[], today: string): PoliceReportLine[] {
+    return guests.map(guest => ({
+        firstName: guest.firstName,
+        lastName: guest.lastName,
+        birthDate: guest.birthDate,
+        nationality: guest.nationality,
+        sex: mapSex(guest.gender),
+        kinship: mapKinship(guest.kinshipRelationship),
+        documentType: inferDocumentType(guest.documentNumber, guest.nationality),
+        documentNumber: guest.documentNumber,
+    }));
 }
